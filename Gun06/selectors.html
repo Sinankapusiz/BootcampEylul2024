@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        /* element */
+        h1{
+            text-transform: uppercase;
+        }
+        /* class */
+        .favori{
+            border-left: 10px solid #007aff;
+        }
+        /* id */
+        #memleket{
+            text-align: center;
+        }
+        #memleket::after{
+            content: "(OTOPARK)";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Türkiye</h1>
+    <h2>Kütahya</h2>
+    <p>Kütahya (Latince: Cotyaeum), Ege Bölgesi'nde yer alan Kütahya ilinin merkezi olan şehirdir. Kütahya bölgesi, kuzey ve batıdaki yüksek dağ sırtlarında doruğa ulaşan tarım arazileri ile geniş bir yamaç alanına sahiptir. Kentin Yunanca adı Kotyaion, Roma dönemindeki adı ise Cotyaeum'dur.[1]       
+    </p>
+    <p>
+        Eski kaynaklara, sikke ve yazıtlara göre Kütahya’nın antik dönemdeki adı “Kotiaeion” (Cotiaeion)'dur.[2] Ünlü Antik Çağ coğrafyacısı Strabon bu adın, “Kotys’in Kenti” anlamına geldiğini belirtmektedir. Kotys, Trakya’da yaşayan Odrisler’den olup, Romalılar’ın MS 38'de Anadolu’ya gönderdiği bir komutanın adıdır. Kütahya Arkeoloji Müzesi’nde bulunan bir sikkede bu ad “Koti” olarak geçmektedir. Kütahya adı, eskisine benzetilerek Türkler tarafından verilmiştir.[3] Şehrin nüfusu 2013 yılına göre 249.558'dir.1927'de 17.000 olan nüfusu, 1990'da 131.000'e, 2000'de 167.000'e, 2008'de 213.000'e 2010'da 235.000'e çıkmış, 2014'te 228.000'e düşmüştür. Kent'in günümüzdeki belli başlı görülmesi gerekli yerleri Kütahya Kalesi, Cumhuriyet Caddesi (Yeni adı Sevgi Yolu) kentin merkezinde bulunan simgesi haline gelmiş çiniden yapılmış olan Vazo ve tarihi Germiyan Sokağı, Saat Kulesi, Zafertepe Anıtı, Tarihi Hükûmet Konağı (şu an Adliye olarak kullanılmaktadır), Frig Vadileridir.
+    </p>
+    <h3>İlçeler</h3>
+    <ul>
+        <li>Merkez</li>
+        <li>Altıntaş</li>
+        <li>Aslanapa</li>
+        <li>Çavdarhisar</li>
+        <li class="favori">Domaniç</li>
+        <li>Dumlupınar</li>
+        <li class="favori">Emet</li>
+        <li>Gediz</li>
+        <li>Hisarcık</li>
+        <li>Pazarlar</li>
+        <li>Simav</li>
+        <li>Şaphane</li>
+        <li id="memleket" class="favori">Tavşanlı</li>
+    </ul>
+</body>
+</html>
