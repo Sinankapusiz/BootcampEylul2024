@@ -36,10 +36,34 @@
             text-align: center;
             
         }
+        /* attribute */
+        li[title]{
+            font-style: italic;
+        }
+        h2+p{
+            text-indent: 50px;
+        }
+        /* odd ya da 2n+1 tek sayıları seçer.*/
+        li:nth-child(odd)
+        {
+            background-color: gainsboro;
+        }
+        /* 6. çocuk  */
+        li:nth-child(6)
+        {
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+            font-family: Arial;
+            letter-spacing: 2px;
+            text-shadow:1px 1px red;
+            color: cyan;
+        }
     </style>
 </head>
 <body>
-    <h1>Türkiye</h1>
+    <h1 title="KIRMIZIIII, BEYAZZZZ, EN BÜYÜKK TÜRKİYEE">&#9790;&#9734; Türkiye &#9734;&#9789;</h1>
     <h2>Kütahya</h2>
     <p>Kütahya (Latince: Cotyaeum), Ege Bölgesi'nde yer alan Kütahya ilinin merkezi olan şehirdir. Kütahya bölgesi, kuzey ve batıdaki yüksek dağ sırtlarında doruğa ulaşan tarım arazileri ile geniş bir yamaç alanına sahiptir. Kentin Yunanca adı Kotyaion, Roma dönemindeki adı ise Cotyaeum'dur.[1]       
     </p>
@@ -70,7 +94,7 @@
         <li>Merkez</li>
         <li>Altıntaş</li>
         <li>Aslanapa</li>
-        <li>Çavdarhisar</li>
+        <li title="Dikkat antik kent içerir!">Çavdarhisar</li>
         <li class="favori">Domaniç</li>
         <li>Dumlupınar</li>
         <li class="favori">Emet</li>
