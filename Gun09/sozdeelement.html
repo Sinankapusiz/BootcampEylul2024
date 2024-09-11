@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sözde Element</title>
+    <style>
+        body {
+            font-size: 24px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        p::first-letter {
+            font-size: 3em;
+            float: left;
+            line-height: .75;
+            font-weight: bold;
+        }
+        p::first-line{
+            text-decoration: underline;
+        }
+        p::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        main {
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+            max-width: 900px;
+            margin: 60px auto 20px;
+            padding: 36px;
+            border-radius: 10px;
+
+            box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+            background: #fffef0;
+        }
+        @media(max-width:600px)
+        {
+            main{
+                margin: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum totam, eveniet, explicabo non expedita adipisci
+            magni odio aliquid obcaecati voluptatem rerum dolorem deleniti minima illum. Fuga minus quia odit rem.</p>
+        <p>Eius modi nulla numquam, quam impedit veritatis expedita natus officiis. Animi, incidunt autem quisquam et,
+            natus sed molestiae at dignissimos minima sapiente, asperiores ratione? Nisi similique architecto aperiam
+            doloribus in.</p>
+        <p>Quae tempore, ipsa neque consequatur maxime facere sunt rerum adipisci repellendus aliquid numquam
+            consequuntur! Quisquam, ducimus aliquam? Temporibus, molestiae unde. Necessitatibus accusantium aperiam
+            assumenda error corrupti quae dolor ab provident.</p>
+        <p>Quibusdam, et culpa? Ab soluta atque voluptatibus saepe delectus beatae quos et facilis deleniti aperiam?
+            Eius distinctio voluptates animi suscipit repudiandae. Hic perspiciatis eos quos culpa unde sint fugiat
+            commodi.</p>
+    </main>
+
+</body>
+
+</html>
