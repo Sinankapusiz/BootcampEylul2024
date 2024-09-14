@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkler</title>
+    <style>
+       .link2{
+            text-decoration: none;
+        }
+        .link3{
+            color: red;
+        }
+        .link4{
+            color: orange;
+            text-decoration: none;
+        }
+        .link4:hover{
+            color: white;
+            background-color: orange;
+        }
+        .link5:active{
+            outline: 3px solid red;
+            background: black;
+            text-decoration: none;
+            color: white;
+        }
+        .link6{
+            text-decoration: none;
+            background:#4f75ff ;
+            color: white;
+            padding: 8px 16px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        .link6:hover{
+            background:#94aafc;
+        }
+        .link6:focus{
+            outline: 3px solid #456dff84;
+            outline-offset: 0;
+        }
+        .link7{
+            display: inline-block;
+            transition: all 1s;
+            color: white;
+            padding: .5rem 1rem;
+            transition: all .3s;
+            text-decoration: none;
+            background-color: cyan;
+        }
+        .link7:hover{
+            background-color: magenta;
+        }
+        .link7:active{
+            background-color: rgb(250, 82, 250);
+            transform: scale(1.2) rotate(360deg);
+        }
+
+    </style>
+</head>
+<body>
+    
+    <a href="#" class="link1">Link 1</a>
+    <a href="#" class="link2">Link 2</a>
+    <a href="#" class="link3">Link 3</a>
+    <a href="#" class="link4">Link 4</a>
+    <a href="#" class="link5">Link 5</a>
+    <a href="#" class="link6">Link 6</a>
+    <a href="#" class="link7">Link 7</a>
+</body>
+</html>
