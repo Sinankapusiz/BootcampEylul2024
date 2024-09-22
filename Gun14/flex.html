@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex</title>
+    <title>FlexBox</title>
     <style>
-        .konteynir{
+        .konteynir {
             border: 10px dashed black;
             height: 300px;
-            display: flex;
-            flex-direction: row;/* row row-reverse column column-reverse */
-            justify-content: space-evenly;/* flex-start flex-end center space-around space-evenly space-betwen */
-            align-items: center;/* stretch center flex-end flex-start baseline*/
+            display: flex; /* ÇOCUKLARI ESNEK YERLEŞECEK */
+            flex-direction: row; /* row row-reverse column column-reverse */
+            justify-content: space-evenly; /* flex-start flex-end center space-between space-around space-evenly */
+            align-items: center; /* stretch center flex-start flex-end baseline */
         }
-        .kutu1{
-            background-color: yellow;
+        .kutu1 {
+            background-color: #d0e81e;
         }
-        .kutu2{
-            background-color: rgb(4, 255, 50);
+        .kutu2 {
+            background-color: #1ee840;
         }
-        .kutu3{
-            background-color: rgb(0, 34, 255);
+        .kutu3 {
+            background-color: #1eb2e8;
         }
     </style>
 </head>
 <body>
+    
     <div class="konteynir">
         <div class="kutu1">Lorem, ipsum dolor.</div>
-        <div class="kutu2">Architecto</div>
-        <div class="kutu3">Corrupti, est non!</div>
+        <div class="kutu2">Iure.</div>
+        <div class="kutu3">Perspiciatis, dignissimos a?</div>
     </div>
-   
+
 </body>
 </html>
