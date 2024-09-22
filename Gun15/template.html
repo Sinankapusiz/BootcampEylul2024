@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Template</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&display=swap');
+
+        body {
+            margin: 0px;
+            background-color: #f1f1f1;
+            font-family: "Lato", sans-serif;
+        }
+
+        header {
+            margin: 1rem 0 2rem 0;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        header>h1 {
+            margin-top: 0;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        mark {
+            color: white;
+            background-color: black;
+            padding: 0 .5rem 0 .5rem;
+            display: inline-block;
+        }
+
+        main {
+            display: flex;
+            gap: .5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .col1 {
+            flex: 2;
+            margin: 0 1rem;         
+        }
+
+        .col2 {
+            flex: 1;
+            margin: 0 1rem;
+        }
+        
+        .box {
+            background-color: white;
+            margin-bottom: 2rem;
+            min-height: 150px;
+            /* SİL */
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 0.2rem;
+        }
+
+        footer {
+            min-height: 80px;
+            /* SİL */
+            background-color: #616161;
+            margin-top: 1rem;
+        }
+        div>img{
+            width: 100%;
+        }
+
+        /* 990 yap */
+        @media(max-width:600px) {
+            main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>MY BLOG</h1>
+        <div class="site-desc">
+            Welcome to the blog of <mark>unknown</mark>
+        </div>
+    </header>
+    <main><!-- İçinde iki ana sütun (mobilde tek) -->
+        <div class="col1">
+            <div class="box">
+                <img src="https://www.w3schools.com/w3images/woods.jpg" alt="">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description</h5>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis consequuntur cum, quia eveniet dolorum unde totam culpa facere inventore id in odio aliquid tempore quos exercitationem dolorem placeat repellendus!</p>
+
+            </div>
+            <div class="box"></div>
+        </div>
+
+        <div class="col2">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </main>
+    <footer>Sayfanın en alt kısmı(copy right, vs)</footer>
+</body>
+
+</html>
