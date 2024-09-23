@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Giriş</title>
+</head>
+<body>
+    <h1>JavaScript Öğreniyorum</h1>
+    <p><!-- Buranın içinş javascript ile değiştirebilir miyiz? --></p>
+    <script>
+        //Burası javascript bölgesi.    
+        
+        //javascript'te htmll dökümanına karşılık gelen
+        //document adında bir nesne vardır.(çizim yaparken
+        //her şeyin başı olarak DOM ağaıcının tepesinde gösterdik)
+        //document mesmesi üzerinden mevcut sayfadaki dökümanının
+        //tüm elementlerine erişebiliriz (belirli yöntemlerle)
+
+        //sayfadaki ilk p elementine eriş ve içinde metni değiştir.
+        let ilkParag = document.querySelector("p");
+        ilkParag.textContent = "Biz kimseyi bırakmadık onlar müsait bir yerde indiler... - Bir kamyon arkası sözü";
+
+        //elementlerin özellerinin özelliklerine erişiriz
+        // = operatörü ile yeni değerler veririz.
+        ilkParag.style.color = "purple";
+
+        //Dom ağacının ilk dallarından biri olan body'ye bu şekilde erişebiliriz.
+        document.body.style.background = "linear-gradient(to right, orange, white)"; 
+        //PROGRAMLAMA:
+        //KOMUTLARIN BELLİ SIRADA BELİRLİ BİR AMAÇ İÇİN ÇALIŞTIRILMASI.
+        //KOMUTLAR İNSAN DİLİNİ YAKIN BİR DİLLE
+        //BİLGİSAYAR İŞ YAOMASI İÇİN FISILDAMADIR.
+        //alert("Hooooop ... palaaa!!!");
+        //alert("Hoşgeldin :)");  
+
+    </script>
+</body>
+</html>
