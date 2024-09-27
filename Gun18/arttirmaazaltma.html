@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment & Decrement</title>
+</head>
+
+<body>
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        let a = 1;
+        a++;// a+=1 arasındaki fark nedir?
+        ciz(a);//2
+
+        let b = 1;
+        ciz(b++ * 3);//3
+        ciz(b);//2
+
+        let c = 5;
+        ciz(c++);//5
+
+        let d = 3;
+        ciz(d++ * d);
+
+        let e = 2;
+        ciz(++e * e);
+
+        let f = 10;
+        ciz(f-- + --f);
+
+        let g = 3;
+        ciz(++g - g--);
+
+        let h = 4;
+        h = h++;
+        ciz(h);
+
+        let i = 7;
+        i = ++i;
+        ciz(i);
+
+        temizle();
+        let j = 5;
+        j *= j++;
+        ciz(j);
+
+        debugger
+        let k = 0;
+        yaz(k++ - --k);
+        yaz(k);
+           
+    </script>
+</body>
+
+</html>
