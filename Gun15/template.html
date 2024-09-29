@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- Tema Linki https://www.w3schools.com/w3css/tryw3css_templates_blog.htm -->
     <style>
         *,
         *::before,
@@ -16,13 +17,21 @@
             box-sizing: border-box;
             font-family: "Raleway", sans-serif;
         }
+
         body {
             margin: 0px;
             background-color: #f1f1f1;
         }
-        body,h1,h2,h3,h4,h5{
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: "Raleway", sans-serif;
         }
+
         header {
             margin: 1rem 0 2rem 0;
             text-align: center;
@@ -66,42 +75,196 @@
             /* SİL */
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border-radius: 0.2rem;
-            padding-bottom: 1rem;
+            /* padding-bottom: 1rem; */
         }
 
         footer {
-            min-height: 80px;
-            /* SİL */
             background-color: #616161;
-            margin-top: 1rem;
+            padding: 1.5rem 1rem;
         }
 
-        div>img {
+        .box>img {
             width: 100%;
+            border-radius: 0.2rem 0.2rem 0 0;
+            margin-bottom: 0.5rem;
         }
+
         /* 990 yap */
         @media(max-width:600px) {
             main {
                 flex-direction: column;
             }
         }
-        h3{
+
+        h3 {
             margin: 0px 1rem;
             font-size: 24px;
-            font-weight: normalZ;
+            font-weight: 500;
         }
-        h5{
+
+        h5 {
             margin: 0px 1rem;
-            line-height: 3rem;
+            line-height: 2rem;
             font-size: 18px;
+            font-weight: 500;
         }
-        p{
-            margin: 0rem 1rem;
+
+        p {
+            margin: 1rem;
+            margin-bottom: 0;
+            padding-bottom: 1rem;
         }
-        h5>span{
-            font-weight: normal;
+
+        .button-and-comment-count {
+            padding-bottom: 1rem;
         }
-       
+
+        h5>span {
+            font-weight: 300;
+        }
+
+
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        .comment,
+        .comment-count,
+        .comment-count-badge {
+            font-family: inherit;
+            font-size: large;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .comment-count {
+            background-color: black;
+            color: white;
+            padding: 0.2rem 0.5rem;
+        }
+
+        .comment-count-badge {
+            background-color: black;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 50%;
+        }
+
+        .button-and-comment-count {
+            display: block;
+        }
+
+        .button-and-comment-count>div {
+            display: inline;
+            float: left;
+        }
+
+        .button-and-comment-count>button {
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 1rem;
+            margin-bottom: 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            margin-right: 57%;
+        }
+
+        .posts-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .posts-list>li {
+            display: list-item;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            line-height: 1.5rem;
+        }
+
+        .posts-list>li:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        .posts-list>li>img {
+            width: 50px;
+            float: left;
+            margin-right: 1rem;
+        }
+
+        .post-list-content>h6 {
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0px;
+            margin: 0;
+        }
+
+        .popular-post-list-title {
+            padding: 1rem;
+            background-color: #f1f1f1;
+        }
+
+        .popular-post-list-title>h4 {
+            margin: 0;
+            padding: 0.5rem 0;
+            font-weight: 600;
+        }
+
+        .popular-tags {
+            padding: 1rem;
+        }
+
+        .popular-tags>span {
+            display: inline-block;
+            background-color: #f1f1f1;
+            padding: 0 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .popular-tags>span:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        .page-nav-button {
+            margin-bottom: 1rem;
+        }
+
+        .page-nav-button>button {
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-weight: 400;
+            border: 0;
+            padding: 1rem 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .page-nav-button>button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .page-nav-button>button:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+
+        footer>span {
+            color: white;
+        }
+
+        footer>span>a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
     </style>
 </head>
 
@@ -115,7 +278,8 @@
     <main><!-- İçinde iki ana sütun (mobilde tek) -->
         <div class="col1">
             <div class="box">
-                <img src="https://www.w3schools.com/w3images/woods.jpg" alt="">
+                <img src="https://www.w3schools.com/w3images/woods.jpg" alt="Vahşi doğa manzarası"
+                    title="Bilinmeyen bir cennet">
                 <h3>TITLE HEADING</h3>
                 <h5>Title description,
                     <span> April 7, 2014</span>
@@ -123,18 +287,98 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit veritatis consequuntur cum,
                     quia eveniet dolorum unde totam culpa facere inventore id in odio aliquid tempore quos
                     exercitationem dolorem placeat repellendus!</p>
-
+                <div class="button-and-comment-count">
+                    <button>READ MORE >></button>
+                    <span class="comment">Comments </span>
+                    <span class="comment-count">0</span>
+                </div>
             </div>
-            <div class="box"></div>
+            <div class="box">
+                <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Köprüdeki kadın" title="Köprüdeki kadın">
+                <h3>BLOG ENTRY</h3>
+                <h5>Title description,
+                    <span> April 2, 2014</span>
+                </h5>
+                <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod
+                    placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non
+                    congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta
+                    lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                <div class="button-and-comment-count">
+                    <button>READ MORE >></button>
+                    <span class="comment">Comments </span><span class="comment-count-badge">2</span>
+                </div>
+            </div>
         </div>
 
         <div class="col2">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+            <div class="box">
+                <img src="https://www.w3schools.com/w3images/avatar_g.jpg" alt="">
+                <h3>MY NAME</h3>
+                <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of love and a interest of
+                    lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
+            </div>
+            <div class="box popular-posts">
+
+                <div class="popular-post-list-title">
+                    <h4>Popular Posts</h4>
+                </div>
+                <ul class="posts-list">
+                    <li><img src="https://www.w3schools.com/w3images/workshop.jpg" alt="">
+                        <div class="post-list-content">
+                            <h6>Lorem</h6>
+                            <span>Sed mattis nunc</span>
+                        </div>
+                    </li>
+                    <li><img src="https://www.w3schools.com/w3images/gondol.jpg" alt="">
+                        <div class="post-list-content">
+                            <h6>Ipsum</h6>
+                            <span>Praes tinci sed</span>
+                        </div>
+                    </li>
+                    <li><img src="https://www.w3schools.com/w3images/skies.jpg" alt="">
+                        <div class="post-list-content">
+                            <h6>Dorum</h6>
+                            <span>Ultricies</span>
+                        </div>
+                    </li>
+                    <li><img src="https://www.w3schools.com/w3images/rock.jpg" alt="">
+                        <div class="post-list-content">
+                            <h6>Mingsum</h6>
+                            <span>Lorem ipsum dipsum</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box tags">
+                <div class="popular-post-list-title">
+                    <h4>Tags</h4>
+                </div>
+                <div class="popular-tags">
+                    <span>Travel</span>
+                    <span>New York</span>
+                    <span>London</span>
+                    <span>IKEA</span>
+                    <span>NORWAY</span>
+                    <span>DIY</span>
+                    <span>Ideas</span>
+                    <span>Baby</span>
+                    <span>Family</span>
+                    <span>News</span>
+                    <span>Clothing</span>
+                    <span>Shopping</span>
+                    <span>Sports</span>
+                    <span>Games</span>
+                </div>
+            </div>
         </div>
     </main>
-    <footer>Sayfanın en alt kısmı(copy right, vs)</footer>
+    <footer>
+        <div class="page-nav-button">
+            <button disabled>Previous</button>
+            <button>Next »</button>
+        </div>
+        <span class="">Powered by <a href="#">Sinan Kapusız</a> </span>
+    </footer>
 </body>
 
 </html>
