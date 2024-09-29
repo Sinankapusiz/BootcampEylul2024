@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonksiyonlar</title>
+</head>
+<body>
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        /* Dört çeşit fonsiyonu örnekleyelim 
+        
+        1. Parametre almayan değer döndürmeyen
+        2. Parametre almayan değer döndüren
+        3. Parametre alan değer döndürmeyen
+        4. Parametre alan değer döndüren
+        */
+
+        //parametre almayan değer döndüren
+        function ayinGunu()
+        {
+            let suAn = new Date();
+            return suAn.getDate();
+        }
+
+        function arkaplaniBoya(renk)
+        {
+            document.body.style.background = renk;
+        }
+        
+        let gun = ayinGunu();
+        ciz("Bugün ayın "+ gun + ". günüdür.");
+
+        function ekranaTarihVeSaatiYazdir()
+        {
+            let suAn = new Date();
+            ciz(suAn.toLocaleString());
+        }
+        ekranaTarihVeSaatiYazdir();
+        //aldığı  sayının bir fazlasını döndürür
+        //mateöatikteki "f(x) = x + 1" gibi
+        //parametre alan ve değer döndüren
+
+        function birFazlası(x)
+        {
+            return x + 1;
+        }
+
+        let sayi=3;
+        sayi=birFazlası(sayi);
+        ciz(sayi);
+
+        arkaplaniBoya("linear-gradient(to right, #333, #777)");
+    </script>
+
+</body>
+</html>
