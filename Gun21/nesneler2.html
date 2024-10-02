@@ -13,10 +13,18 @@
             this.marka = marka;
             this.yil = yil;
             this.renk = renk; 
-            yaz("Benim arabam var.");          
+            this.ozetle = function(){
+                return this.renk + " renkli, "+ this.yil +" model "+this.marka;
+            }
+            ciz("Benim arabam var.");          
         }
         let a1 = new araba("Hyundai i20", 2020,"Beyaz");
         console.log(a1);
+        a1.yil = 2012;// nesnenin özelliğini güncelledik.
+        ciz(a1.ozetle());
+
+        let a2 = new araba("BMW i7",2024, "Siyah");
+        ciz(a2.ozetle());
     </script>
 </body>
 </html>
