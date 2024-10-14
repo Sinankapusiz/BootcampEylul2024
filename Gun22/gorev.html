@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev 1</title>
+</head>
+
+<body>
+    <script src="../ortak/yaz.js"></script>
+    <h3>Görev</h3>
+    <ul>
+        <li>6 elemanlı bir sayı dizi oluştur: 4, 8, 15, 16, 23, 42</li>
+        <li>başına 10 ekle</li>
+        <li>sonuna 99 ekle</li>
+        <li>2. indeksten başlayarak 3 adet sayı sil</li>
+        <li>3. indekse 77 sayısını sok(mevcutlara dokunma)</li>
+        <li>2. indeksteki sayıyı 66 olarak güncelle</li>
+        <li>başına sil ve silineni yazdır</li>
+        <li>sonunu sil ve silineni yazdır</li>
+    </ul>
+    <script>
+        ciz();
+        let dizi = [4, 8, 15, 16, 23, 42];
+        ciz("dizi elemanları: " + dizi);
+
+        dizi.unshift(10);
+        ciz("Dizi başına eklenen eleman: " + dizi[0]);
+        ciz("dizi elemanları: " + dizi);
+
+        dizi.push(99);
+        ciz("Dizi sonuna eklenen eleman: " + dizi[7]);
+        ciz("dizi elemanları: " + dizi);
+
+        ciz("Diziden silinen elemanlar: "+dizi.splice(2, 3));
+        ciz("dizi elemanları: " + dizi);
+
+        dizi.splice(3, 0, 77);
+        ciz("dizi elemanları: " + dizi);             
+
+        dizi[2] = 66;
+        ciz("dizi elemanları: " + dizi);
+
+        ciz("dizi başından silinen eleman: " + dizi.shift());
+        ciz("dizi elemanları: " + dizi);
+
+        ciz("dizi sonundan silinen eleman: " + dizi.pop());
+        ciz("dizi elemanları: " + dizi);
+    </script>
+</body>
+
+</html>
