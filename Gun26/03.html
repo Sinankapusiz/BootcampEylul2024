@@ -1,0 +1,22 @@
+<!-- GÖREV 3: Parametre olarak sayının karesini hesaplayan fonsiyon arrow function yöntemiyle tanımla ve bir değişkende sakla. Bu fonksiyonu kullanarak 1'den 10 kadar olan sayıların karesi hmtl'de oluşturduğun ul'un içine li'ler halinde ekle-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev 3</title>
+</head>
+
+<body>
+    <ul id="liste"></ul>
+    <script>
+        const karesi = sayi => sayi * sayi;
+        const liste1 = document.getElementById("liste");
+        for (let i = 1; i <= 10; i++) {
+            liste1.innerHTML += "<li>" + karesi(i) + "</li>";
+        }
+    </script>
+</body>
+
+</html>

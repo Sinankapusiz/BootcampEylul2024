@@ -1,0 +1,26 @@
+<!-- GÖREV 1: HTML dökümanı oluştur. body elementine javascript yardımıyla 2 ile 2'nin toplamını yazdır. -->
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GÖREV 1</title>
+</head>
+
+<body>
+    <h1>Görev 1</h1>
+    <script>
+        //document.write(2+2);
+        //document.body.innerHTML += 2+2;
+        let div = document.createElement("div");
+        div.textContent = 2 + 2;
+        div.style.background = "black";
+        div.style.color = "white";
+        div.style.marginTop = "1rem";
+        document.body.appendChild(div);
+    </script>
+</body>
+
+</html>
