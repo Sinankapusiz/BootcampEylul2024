@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=4, initial-scale=1.0">
+    <title>Ödev Beni hatırla</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0px;
+            background-image: url(https://wallpapers.com/images/hd/black-and-white-comic-1500-x-1102-wallpaper-syylxu4dsw0d63r7.jpg);
+            background-size: cover;
+            background-color: #000000;
+            
+        }
+        img{
+            filter: opacity(30%);
+        }
+        .form-background {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .form {
+            max-width: 380px;
+            padding: 2rem 2rem 2rem;
+            margin: 0 auto;
+            /* Div Ortalamayı yarıyor */
+            background-color: #fff;
+            border: 2px solid rgba(0, 0, 0, 0.7);
+            text-align: center;
+            border-radius: 0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 10px;
+        }
+
+        .form-heading {
+            text-align: center;
+            margin-bottom: 0px;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .form-textBox {
+            font-size: 16px;
+            padding: 1rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            font-family: "Roboto", sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        input::placeholder {
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+            color: #000000;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border: 2px solid #1A1A1A;
+            width: 100%;
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            color: black;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        }
+
+        .btn:hover {
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+            background-color: #000000;
+            color: white;
+        }
+
+        .name {
+            font-family: "Roboto", sans-serif;
+            color: red;
+            font-size: 2rem;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-background">
+            <form class="form" id="frm">
+                <h2 class="form-heading">Lütfen İsminizi Giriniz</h2>
+                <input type="text" class="form-textBox" id="ad" placeholder="İsminiz..." required />
+                <br>
+                <button class="btn">Beni Hatırla</button>
+            </form>
+    </div>
+    <script>
+        const frm = document.getElementById("frm");//From için sabit bir değerli nesne oluşturduk.
+        const txtAd = document.getElementById("ad");// Ad için sabit bir değerli nesne oluşturduk.
+
+        if (localStorage["ad"]) //localStorage bir kayıt olup olmadığını kontrol ediyoruz.
+        //Sayfa tekrar yenilendiğinde buradaki kod eyleme geçecek.
+        {
+            const hatirlananAd = localStorage["ad"];
+            hosgeldin(hatirlananAd);
+        }
+
+        function hosgeldin(ad) {
+            frm.innerHTML = `<h2 class="form-heading">HOŞGELDİN</h2><span class="name">${ad}</span><button class="btn" onclick ="unut()">Beni Unut!</button>
+            `;
+
+        }
+        function unut() {
+            localStorage.removeItem("ad");
+            localStorage.clear();
+            location.reload();
+        }
+
+        frm.onsubmit = function (event) {
+            event.preventDefault();// Formun subit etmesiniengelliyoruz.
+            const ad = txtAd.value;
+            localStorage["ad"] = ad;
+            frm.innerHTML = `<h2 class="form-heading">Merhaba Seni Hatırlayacağız</h2><span class="name">${ad}</span>`;
+            setTimeout(() => location.reload(), 1500);
+        }
+
+    </script>
+</body>
+
+</html>

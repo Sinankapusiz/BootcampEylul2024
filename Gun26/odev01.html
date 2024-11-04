@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 1</title>
+    <style>
+        .butonlar{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 3px;        
+        }
+        .butonlar>button{
+            padding: 5px;
+            font-size: 16px;
+            background-color: deepskyblue;
+            border: 2px solid dodgerblue;
+            border-radius: 0.2rem;
+            color: darkblue;
+        }
+        .butonlar>button:hover{
+            background-color: dodgerblue;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            color: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ödev 1</h1>
+    <div class="butonlar" id="sonuc"></div>
+    <script>
+        const sonuc = document.getElementById("sonuc");
+        for (let i = 0; i < 100; i++) {
+            const btn = document.createElement("button");//buton oluşturan kod
+            btn.textContent = 0;
+            sonuc.appendChild(btn);
+            btn.onclick = function () {
+                this.textContent = Number(this.textContent) + 1;
+            }
+        }
+    </script>
+</body>
+
+</html>

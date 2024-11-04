@@ -1,5 +1,50 @@
-
 <!-- ÖDEV 2:
 Bir kare yapın. Bu kareye tıklayınca sayfa üzerinde rastgele bir yere
 gitsin. (ipuçları: css'teki mutlak pozisyonlamadan yararlanılabilir.)
 -->
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 2</title>
+    <style>
+        #kutu{
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="kutu">Tıkla Bana!</button>
+    <script>
+        const kare = document.getElementById("kutu");
+        /*function rastgeleBirYer()
+        {
+            let rastgeleTop = Math.floor(Math.random()*window.innerHeight + "px");
+            let rastgeleLeft = Math.floor(Math.random()*window.innerHeight + "px");
+            kare.style.top = rastgeleTop;
+            kare.style.left = rastgeleLeft;
+        };
+        kare.onclick = rastgeleBirYer();*/
+
+        kare.addEventListener('click', () => {
+            // Rastgele bir konum belirle
+            const randomTop = Math.floor(Math.random() * (window.innerHeight - kare.clientHeight)) + 'px';
+            const randomLeft = Math.floor(Math.random() * (window.innerWidth - kare.clientWidth)) + 'px';
+
+            // Butonun pozisyonunu güncelle
+            kare.style.top = randomTop;
+            kare.style.left = randomLeft;
+        });
+    </script>
+</body>
+
+</html>

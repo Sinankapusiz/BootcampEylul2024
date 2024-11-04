@@ -2,3 +2,65 @@
 <!-- GÖREV 3: Bir metin kutusu koyun. Kullanıcı oraya renk kodu girince
  sayfanın arkaplan rengi o renk olsun. Örnek inputlar:
  red, orange, #fafafa, #e3c, rgb(253, 33, 128), vs.. -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödev 3</title>
+    <style>
+        h2{
+            color: white;
+        }
+        .kutu{
+            background-color: brown;
+            width: 300px;
+ 
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin:auto;           
+        }
+        #renkKodu{
+            height: 2rem;
+            width: 100%;
+            border: 0px;
+            padding: 0px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        #rengiDegistir{
+            font-size: 1rem;
+            height: 2rem;
+            width: 100%; 
+            border: 0px;
+            background-color:rgb(132, 248, 16);
+        }
+        #rengiDegistir:hover{
+            background-color: rgba(132, 248, 16, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="kutu">
+        <h2>Arka Plan Rengini Değiştir</h2>
+        <input type="text" id="renkKodu" placeholder="Renk kodu girin (örn. #ff5733 veya 'red')">
+        <button id="rengiDegistir">Rengi Değiştir</button>
+    </div>
+    
+
+    <script>
+        const colorInput = document.getElementById('renkKodu');
+        const changeColorButton = document.getElementById('rengiDegistir');
+
+        changeColorButton.addEventListener('click', () => {
+            //Boşlukları siler
+            const color = colorInput.value.trim();
+
+            //arka plan rengini değiştirir.
+            document.body.style.backgroundColor = color;
+        });
+    </script>
+</body>
+</html>
