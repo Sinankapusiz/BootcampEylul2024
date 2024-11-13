@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dizi Metotları</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ccc, #fff);
+            margin: 3rem;
+        }
+
+        .sutunlar {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .sutunlar>div {
+            flex: 1;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        .butonlar {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bir Takım Dizi İşlemleri</h1>
+    <div class="sutunlar">
+        <div>
+            <textarea id="kaynak"></textarea>
+        </div>
+        <div>
+            <textarea id="sonuc"></textarea>
+        </div>
+    </div>
+    <div class="butonlar">
+        <button type="button" id="btnTemizle">Temizle</button>
+        <button type="button" id="btnUzun">Uzunluklar</button>
+        <button type="button" id="btnAlti">6 Harfliler</button>
+        <input type="text" id="txtAra" placeholder="ara..." size="10">
+    </div>
+    <script>
+        const btnUzun = document.getElementById("btnUzun");
+        const txtKaynak = document.getElementById("kaynak");
+        txtKaynak.value = localStorage["BirTakimDiziData"] ?? "";
+        const txtSonuc = document.getElementById("sonuc");
+        const btnTemizle = document.getElementById("btnTemizle");
+        const btnAlti = document.getElementById("btnAlti");
+        const txtAra = document.getElementById("txtAra");
+        btnUzun.onclick = function () {
+            const str = txtKaynak.value;
+            const kaynakDizi = str.split("\n");
+            const hedefDizi = kaynakDizi.map(x => x.length);
+            const hedefStr = hedefDizi.join("\n");
+            txtSonuc.value = hedefStr;
+        };
+
+        txtKaynak.oninput = function () {
+            localStorage["BirTakimDiziData"] = txtKaynak.value;
+        }
+        btnTemizle.onclick = function () {
+            txtKaynak.value = txtSonuc.value = "";
+            localStorage.removeItem("BirTakimDiziData");
+        }
+        btnAlti.onclick = function () {
+            const dizi = txtKaynak.value.trim().split("\n");
+            const hedef = dizi.filter(x => x.length == 6);
+            txtSonuc.value = hedef.join("\n");
+        };
+        txtAra.oninput = function () {
+            const dizi = txtKaynak.value.trim().split("\n");
+            const ara = txtAra.value.toLocaleLowerCase();
+            const hedef = dizi.filter(x => x.toLocaleLowerCase().includes(ara));
+            txtSonuc.value = hedef.join("\n");
+        };
+    </script>
+</body>
+
+</html>
