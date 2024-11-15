@@ -113,7 +113,7 @@
     <form id="frmHava">
         <label for="yer">Yer</label>
         <input id="yer" type="text" placeholder="şehir adı..." required>
-        <button>Hava Durumunu Öğren</button>
+        <button id="gonder">Hava Durumunu Öğren</button>
     </form>
 
     <dl id="sonuc">
@@ -133,11 +133,14 @@
         const ddSicaklik = document.getElementById("sicaklik");
         const ddAciklama = document.getElementById("aciklama");
         const ddGorsel = document.getElementById("gorsel");
+        const btnGonder = document.getElementById("gonder");
+        const sonucPanel = document.getElementById("sonuc");
 
-        frmHava.oninput = function (event) {
+        sonucPanel.style.display = "none";
+       /*frmHava.oninput = function (event) {
             event.preventDefault();
 
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${txtYer.value}&appid=(apikey)&lang=tr`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${txtYer.value}&appid=bfebde460b84fa08d82542a2ff87e146&lang=tr`)
                 .then(res => res.json())
                 .then(data => {
                     ddSehir.textContent = data.name;
@@ -145,7 +148,18 @@
                     ddAciklama.textContent = data.weather[0].description;
                     ddGorsel.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="Hava Durumu">`;
                 });
-        }
+        }*/
+       btnGonder.onclick = function(event){
+            event.preventDefault();
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${txtYer.value}&appid=bfebde460b84fa08d82542a2ff87e146&lang=tr`)
+            .then(res => res.json()).then(data => {
+                    ddSehir.textContent = data.name;
+                    ddSicaklik.textContent = data.main.temp + " °C";
+                    ddAciklama.textContent = data.weather[0].description;
+                    ddGorsel.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png" alt="Hava Durumu">`;
+            });
+            sonucPanel.style.display = "block";
+       }
     </script>
 </body>
 
