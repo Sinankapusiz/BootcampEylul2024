@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Loading</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        canvas {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="400" height="400"></canvas>
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+        const sa = -Math.PI / 2;//start angle
+
+        let oran1 = 0;
+        let oran2 = 0;
+        let tur = 0;
+
+
+        function arttirVeCiz() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            if (tur % 2 == 0) {
+                oran2 += 0.001;
+            }
+            else
+                oran1 += 0.001;
+
+            ctx.arc(
+                200,                        //x
+                200,                        //y
+                100,                        //r:radius
+                sa + Math.PI * 2 * oran1,   //start angle(radian)
+                sa + Math.PI * 2 * oran2    //end angle(radian)
+            );
+            ctx.lineWidth = 20;
+            ctx.stroke();
+            requestAnimationFrame(arttirVeCiz);
+            
+            if (tur % 2 == 0 && oran2 >= 1) {
+                tur++;
+                oran2 = 1;
+            }
+            if (tur % 2 != 0 && oran1 >= 1) {
+                tur++;
+                oran2 = 0;
+                oran1 = 0;
+            };
+        }
+        requestAnimationFrame(arttirVeCiz);
+
+    </script>
+</body>
+
+</html>
