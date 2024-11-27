@@ -25,13 +25,57 @@ let jd = 0;
 
 
 function ciz() {
+    
     cizimiTemizle();
     zeminCiz();
     ziplamayiYonet();
     dinoCiz();
     agaclariCiz();
     sahneyiKaydir();
+    let carpti = carptiMi();
+    if (carpti) {
+        oyunuBitir();
+        return;
+    }
+
     requestAnimationFrame(ciz);
+}
+
+function oyunuBitir() {
+    let txt = "GAME OVER!";
+    ctx.font = '24px Tiny5, sans-serif';
+    const textWidth = ctx.measureText(txt).width;
+    ctx.fillText(txt, (canvas.width - textWidth) / 2, canvas.height / 4);
+}
+
+function carptiMi() {
+    // dinazorun x/y düzlemindeki dikdörtgen alanları
+    const d1 = {
+        a: {
+            x: dx,
+            y: dy - jh
+        },
+        b: {
+            x: dx + dw,
+            y: dy - jh + dh
+        }
+    };
+
+    // ağaçların x/y düzlemindeki dikdörtgen alanları
+    const engeller = trees
+        .filter(x => x > -tw && x < canvas.width)
+        .map(e => ({
+            a: {
+                x: e,
+                y: ty
+            },
+            b: {
+                x: e + tw,
+                y: ty + th
+            }
+        }));
+
+    return engeller.some(e => kesisir(e, d1));
 }
 
 function sahneyiKaydir() {
@@ -110,11 +154,48 @@ function zeminCiz() {
     ctx.stroke();
 }
 
+function mesafe(n1, n2) {
+    return Math.sqrt(Math.pow(n1.x - n2.x, 2) + Math.pow(n1.y - n2.y, 2));
+}
+
+function kesisir(d1, d2) {
+    // orta noktaları arasındaki mesafe yarı çapları toplamından küçükse
+    const o1 = { x: (d1.a.x + d1.b.x) / 2, y: (d1.a.y + d1.b.y) / 2};
+    const o2 = { x: (d2.a.x + d2.b.x) / 2, y: (d2.a.y + d2.b.y) / 2};
+    const mes = mesafe(o1, o2);
+    const r1 = (dw + dh) / 4.8; // yük + gen / 4 => yaklaşık yarıçap
+    const r2 = (tw + th) / 4.8; // yük + gen / 4 => yaklaşık yarıçap
+    // oyunu esnetmek için 4'e bölmek yerine 4.8'e böldük
+
+    return mes < r1 + r2;
+}
+
+// bunu kullanmadık, çünkü köşeleri keskin değil
+// daire gibi düşüneceğiz dinozor ve kaktüsleri
+// d1: dikdörtgen1  d2: dikdörtgen2
+// örnek input: {a:{x:0,y:2},b:{x:2,y:0}}, {a:{x:1,y:3},b:{x:3,y:1}}
+// function kesisir(d1, d2) {
+
+//     return !(
+//         -d1.b.y >= -d2.a.y ||  // d1, d2'nin üstündeyse
+//         -d1.a.y <= -d2.b.y ||  // d1, d2'nin altındaysa
+//         d1.b.x <= d2.a.x ||  // d1, d2'nin solundaysa
+//         d1.a.x >= d2.b.x     // d1, d2'nin sağındaysa
+//     );
+// }
+
 // EVENTS
 dinoImage.onload = function() {
     baslat();
 };
 
-canvas.onclick = function() {
+canvas.onclick = jump;
+
+window.onkeydown = function(event) {
+    if (event.keyCode == 38)
+        jump();
+};
+
+function jump() {
     if (jd == 0) jd = +1;
 };
