@@ -1,13 +1,15 @@
-html,body{
+html, body {
     margin: 0;
     height: 100%;
 }
-body{
+
+body {
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-canvas{
+
+canvas {
     background-color: #f7f7f7;
 }
